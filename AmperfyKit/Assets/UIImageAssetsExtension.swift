@@ -224,6 +224,9 @@ extension UIImage {
 
   public static let miniPlayer = UIImage.create(systemName: "play.rectangle.on.rectangle")
   public static let listBullet = UIImage.create(systemName: "list.bullet")
+  // HILBERTO
+  public static let upload = UIImage.create(systemName: "square.and.arrow.up")
+  public static let recomender = UIImage.create(systemName: "music.note.square.stack.fill")
 
   /// Asset symbol generation is enabled by default for both new and old projects but can be disabled by setting the build setting "Generate Asset Symbols" (ASSETCATALOG_COMPILER_GENERATE_ASSET_SYMBOLS) to NO.
   #if false
@@ -487,14 +490,14 @@ extension UIImage {
     // HILBERTO TODO
     case .recomender:
         generatedArtwork = UIImage.createArtwork(
-            with: UIImage.radio,
+            with: UIImage.recomender,
             iconSizeType: .big,
             theme: theme,
             lightDarkMode: lightDarkMode
         )
     case .upload:
         generatedArtwork = UIImage.createArtwork(
-            with: UIImage.radio,
+            with: UIImage.upload,
             iconSizeType: .big,
             theme: theme,
             lightDarkMode: lightDarkMode

@@ -63,6 +63,10 @@ extension LibraryDisplayType {
     case .radios:
       return AppStoryboard.Main.segueToRadios()
     // HILBERTO TODO
+    case .recomender:
+        return AppStoryboard.Main.segueToRecomender()
+    case .upload:
+        return AppStoryboard.Main.segueToUpload()
     }
   }
 }

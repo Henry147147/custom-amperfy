@@ -163,6 +163,9 @@ enum AppStoryboard: String {
   }
     
     // HILBERTO TODO
+  func segueToUpload() -> UIViewController { RadiosVC() }
+  func segueToRecomender() -> UIViewController { RadiosVC() }
+    
 
   func segueToPodcastDetail(
     podcast: Podcast,

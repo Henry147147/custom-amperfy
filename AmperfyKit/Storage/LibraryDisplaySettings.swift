@@ -28,21 +28,24 @@ import UIKit
 
 @MainActor
 public enum LibraryDisplayType: Int, CaseIterable, Sendable {
-  case artists = 0
-  case albums = 1
-  case songs = 2
-  case genres = 3
-  case directories = 4
-  case playlists = 5
-  case podcasts = 6
-  case downloads = 7
-  case favoriteSongs = 8
-  case favoriteAlbums = 9
-  case favoriteArtists = 10
+  // HILBERTO
+  case recomender = 0
+  case artists = 1
+  case albums = 2
+  case songs = 3
+  case genres = 4
+  case directories = 5
+  case playlists = 6
+  case podcasts = 7
+  case downloads = 8
+  case favoriteSongs = 9
+  case favoriteAlbums = 10
+  case favoriteArtists = 11
   // case recentSongs = 11 not used anymore
   case newestAlbums = 12
   case recentAlbums = 13
   case radios = 14
+  case upload = 15
 
   public static func createByDisplayName(name: String) -> LibraryDisplayType? {
     .allCases.first {
@@ -80,6 +83,10 @@ public enum LibraryDisplayType: Int, CaseIterable, Sendable {
       return "Recently Played Albums"
     case .radios:
       return "Radios"
+    case .recomender:
+      return "Recomender"
+    case .upload:
+      return "Upload"
     }
   }
 
@@ -113,6 +120,11 @@ public enum LibraryDisplayType: Int, CaseIterable, Sendable {
       return UIImage.albumRecent
     case .radios:
       return UIImage.radio
+    // HILBERTO
+    case .recomender:
+      return UIImage.recomender
+    case .upload:
+      return UIImage.upload
     }
   }
 }
