@@ -75,6 +75,8 @@ public enum ArtworkType: CaseIterable {
   case playlist
   case folder
   case radio
+  case recomender
+  case upload
 
   public var description: String {
     switch self {
@@ -96,6 +98,10 @@ public enum ArtworkType: CaseIterable {
       return "Folder"
     case .radio:
       return "Radio"
+    case .recomender:
+        return "Recomender"
+    case .upload:
+        return "Upload"
     }
   }
 }
@@ -237,6 +243,7 @@ extension UIImage {
   public static let podcastQueueInsert = contextQueueInsert
   public static let podcastQueueAppend = contextQueueAppend
 
+  // HILBERTO TODO
   public static func getGeneratedArtwork(
     theme: ThemePreference,
     artworkType: ArtworkType
@@ -264,6 +271,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "BlueFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "BlueRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "BlueSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "BlueSong")
       }
     case .green:
       switch artworkType {
@@ -285,6 +297,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "GreenFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "GreenRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "GreenSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "GreenSong")
       }
     case .red:
       switch artworkType {
@@ -306,6 +323,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "RedFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "RedRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "RedSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "RedSong")
       }
     case .yellow:
       switch artworkType {
@@ -327,6 +349,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "YellowFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "YellowRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "YellowSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "YellowSong")
       }
     case .orange:
       switch artworkType {
@@ -348,6 +375,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "OrangeFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "OrangeRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "OrangeSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "OrangeSong")
       }
     case .purple:
       switch artworkType {
@@ -369,6 +401,11 @@ extension UIImage {
         img = UIImage(imageLiteralResourceName: "PurpleFolder")
       case .radio:
         img = UIImage(imageLiteralResourceName: "PurpleRadio")
+      // HILBERTO TODO
+      case .recomender:
+        img = UIImage(imageLiteralResourceName: "PurpleSong")
+      case .upload:
+        img = UIImage(imageLiteralResourceName: "PurpleSong")
       }
     }
 
@@ -447,6 +484,21 @@ extension UIImage {
         theme: theme,
         lightDarkMode: lightDarkMode
       )
+    // HILBERTO TODO
+    case .recomender:
+        generatedArtwork = UIImage.createArtwork(
+            with: UIImage.radio,
+            iconSizeType: .big,
+            theme: theme,
+            lightDarkMode: lightDarkMode
+        )
+    case .upload:
+        generatedArtwork = UIImage.createArtwork(
+            with: UIImage.radio,
+            iconSizeType: .big,
+            theme: theme,
+            lightDarkMode: lightDarkMode
+        )
     }
     return generatedArtwork ?? UIImage()
   }

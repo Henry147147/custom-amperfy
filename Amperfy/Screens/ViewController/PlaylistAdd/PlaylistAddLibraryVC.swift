@@ -34,6 +34,7 @@ public protocol PlaylistVCAddable: UIViewController {
 extension LibraryDisplayType {
   public var vcForPlaylistAdd: PlaylistVCAddable? {
     switch self {
+    // HILBERTO TODO
     case .genres:
       let vc = PlaylistAddGenresVC()
       return vc
